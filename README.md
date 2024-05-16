@@ -13,7 +13,7 @@ Currently only requiring numpy for array usage.
 
 Note: These instructions are made available 
 ### Setting up the DCD Reader
-Instantiate DCDReader object with the trajectory filename. Will read in header frame.
+Instantiate DCDReader object with the trajectory filename. Will read in header frame.<br /> 
 ` dcd = DCDReader("trajectory.dcd") `
 
 ### Using the DCD Reader to read from file
