@@ -7,11 +7,12 @@ Calculate molecular properties from a dcd file.
 cd MASContactCalculator
 pip install -e .
 ```
-Currently only requiring numpy for array usage.
+Currently only requiring numpy for array usage and pytest for unittests.
 
 # Example Usage
 
-Note: These instructions are made available 
+Note: These instructions are made available in `scripts/fromMAS.py`, which will read the dcd file `data/R1.dcd` and compute the distance matrix for all atoms over the 500 frame trajectory.
+
 ## Setting up the DCD Reader
 Instantiate DCDReader object with the trajectory filename. Will read in header frame.<br/> 
 ```
