@@ -9,7 +9,7 @@ pip install -e .
 ```
 Currently only requiring numpy for array usage.
 
-
+## Example Usage
 
 ## To-Do List
 - A `Selection` class: Allow the user to subselect atoms in a frame.
