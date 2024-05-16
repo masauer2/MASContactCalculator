@@ -32,8 +32,8 @@ class Frame:
     @staticmethod
     def compute_inverse_distance(coord1, coord2):
         """Compute inverse distance between positions of two atoms."""
-        if coord1 == None or coord2 == None:
-            raise Exception("Distance calculator requires two coordinates.")
+        if len(coord1) != 3 or len(coord2) != 3:
+            raise Exception("Distance calculator requires 2 arrays of length 3.")
         tmp = Frame.compute_distance(coord1, coord2)
         if tmp != 0:
             return 1/tmp
