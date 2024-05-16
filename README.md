@@ -56,4 +56,4 @@ for frameNum in range(len(dcd)):
 - Data types -- the user should have to make selections with a predetermined format - not array slices. (implement Selection class)
 - One class per type of calculation i.e distance calculations should be stored in a `Distance` class w/ static methods to compute properties on a frame.
 - Better documentation
-- Unit tests? How do you unit test io functions??
+- Unit tests.
