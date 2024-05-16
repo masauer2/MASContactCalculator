@@ -21,7 +21,7 @@ dcd = DCDReader("trajectory.dcd")
 
 ## Step 2 - Using the DCD Reader to read from file
 
-Create an array of empty **Frame** objects. Each **Frame** stores the atomic coordinates of the system at one timestep. For each frame in the trajectory, we will use the `read_DCD_Frame()` function to read the next timestep in. <br/>
+Create an array to hold empty Frame objects. Each Frame will store the atomic coordinates of the system at a specific timestep. For each frame in the trajectory, we will use the read_DCD_Frame() function to read the data for the next timestep. <br/>
 ```
 frames = np.empty(len(dcd), dtype=object)
 for frameNum in range(options["nRead"]):
@@ -30,9 +30,9 @@ for frameNum in range(options["nRead"]):
 
 ## Step 3 - Calculate Molecular Properties
 
-Once the trajectory is read in, we can calculate the molecular properties of each **Frame**. <br/>
+After reading in the trajectory, we can calculate the molecular properties of each Frame. <br/>
 
-For example, the contact distance matrix can be calculated. The **Frame** class contains static methods to compute the distance between all atoms in a selected **Frame**.
+For example, we can compute the contact distance matrix. The Frame class includes static methods to calculate the distances between all atoms in a given Frame. <br/>
 
 ```
 for frameNum in range(len(dcd)):
@@ -40,9 +40,9 @@ for frameNum in range(len(dcd)):
   Frame.output_distance_matrix(distance_matrix, "matrix.out")
 ```
 
-The distance matrix can be calculated for a subset of atomic coordinates in the system. Selections can be made with the frame.get_selection(arr_slice) function. <br/>
+The distance matrix can be calculated for a subset of atomic coordinates in the system. Selections can be made using the frame.get_selection(arr_slice) function. <br/>
 
-The following code computes the distance matrix between atoms 0-19 and atoms 50-249 for all timesteps in the trajectory.
+The following code computes the distance matrix between atoms 0-19 and atoms 50-249 for all timesteps in the trajectory:
 
 ```
 sel1 = np.arange(0,20,1)
@@ -56,5 +56,5 @@ for frameNum in range(len(dcd)):
 # To-Do List
 - Data types -- the user should have to make selections with a predetermined format - not array slices. (implement Selection class)
 - One class per type of calculation i.e distance calculations should be stored in a `Distance` class w/ static methods to compute properties on a frame.
-- Better documentation
-- Unit tests.
+- Topology Reader
+- Other file formats? Trr? XYZ/GRO/PDB?
