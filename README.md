@@ -38,13 +38,6 @@ for frameNum in range(len(dcd)):
   distance_matrix = Frame.compute_distance_matrix(frames[frameNum], frames[frameNum])
   Frame.output_distance_matrix(distance_matrix, "matrix.out")
 ```
-```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
 
 The distance matrix can be calculated for a subset of atomic coordinates in the system. Selections can be made with the frame.get_selection(arr_slice) function. <br/>
 
@@ -59,8 +52,8 @@ for frameNum in range(len(dcd)):
 ```
 
 
-## To-Do List
-- A `Selection` class: Allow the user to subselect atoms in a frame.
+# To-Do List
+- Data types -- the user should have to make selections with a predetermined format - not array slices. (implement Selection class)
 - One class per type of calculation i.e distance calculations should be stored in a `Distance` class w/ static methods to compute properties on a frame.
 - Better documentation
 - Unit tests? How do you unit test io functions??
