@@ -13,13 +13,13 @@ Currently only requiring numpy for array usage and pytest for unittests.
 
 Note: These instructions are made available in `scripts/fromMAS.py`, which will read the dcd file `data/R1.dcd` and compute the distance matrix for all atoms over the 500 frame trajectory.
 
-## Setting up the DCD Reader
+## Step 1 - Setting up the DCD Reader
 Instantiate DCDReader object with the trajectory filename. Will read in header frame.<br/> 
 ```
 dcd = DCDReader("trajectory.dcd")
 ```
 
-## Using the DCD Reader to read from file
+## Step 2 - Using the DCD Reader to read from file
 
 Create an array of empty **Frame** objects. Each **Frame** stores the atomic coordinates of the system at one timestep. For each frame in the trajectory, we will use the `read_DCD_Frame()` function to read the next timestep in. <br/>
 ```
@@ -28,7 +28,7 @@ for frameNum in range(options["nRead"]):
   frames[frameNum] = dcd.read_DCD_Frame()
 ```
 
-## Calculate Molecular Properties
+## Step 3 - Calculate Molecular Properties
 
 Once the trajectory is read in, we can calculate the molecular properties of each **Frame**. <br/>
 
