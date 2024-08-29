@@ -14,13 +14,15 @@ Currently only requiring numpy for array usage and pytest for unittests.
 
 # Example Usage
 
-Note: These instructions are made available in `scripts/fromMAS.py`, which will read the dcd file `data/R1.dcd` and compute the distance matrix for all atoms over the 500 frame trajectory.
+Note: These instructions are made available in `scripts/fromMAS.py`, which will read the dcd file `data/R1.dcd` and compute the distance matrix for all atoms over the 500 frame trajectory. 
 
 ## Step 1 - Setting up the DCD Reader
 Instantiate DCDReader object with the trajectory filename. Will read in header frame.<br/> 
 ```
 dcd = DCDReader("trajectory.dcd")
 ```
+> [!NOTE]  
+> Currently, this codebase can only work with .dcd files. Functionality for other formats will be added in the future.
 
 ## Step 2 - Using the DCD Reader to read from file
 
@@ -54,10 +56,6 @@ for frameNum in range(len(dcd)):
   distance_matrix = Frame.compute_distance_matrix(frames[frameNum].get_selection(sel1), frames[frameNum].get_selection(sel2))
   Frame.output_distance_matrix(distance_matrix, "matrix.out")
 ```
+> [!IMPORTANT]  
+> Currently, this snippet is hard-coded to compute the distance matrix for atoms 0-19 and atoms 50-249. If you use your own trajectory, these selections would need to be altered to your use.
 
-
-# To-Do List
-- Data types -- the user should have to make selections with a predetermined format - not array slices. (implement Selection class)
-- One class per type of calculation i.e distance calculations should be stored in a `Distance` class w/ static methods to compute properties on a frame.
-- Topology Reader
-- Other file formats? Trr? XYZ/GRO/PDB?
