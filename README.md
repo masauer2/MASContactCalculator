@@ -1,5 +1,5 @@
 # Generating Contact Distance Matrices from Scratch in Python
-This codebase is designed to be used as a template for how to perform analysis on molecular dynamics simulations. Currently, the sample code provided calculates a contact distance matrix from `.dcd` trajectories. However, this repository could be used to write analysis for any position-based properties (position correlation functions, dipole moment fluctuations, etc).
+This codebase is designed to be used as a **simple template** for how to perform analysis on molecular dynamics simulations. Currently, the sample code provided calculates a contact distance matrix from `.dcd` trajectories. However, this repository could be used to write analysis for any position-based properties (position correlation functions, dipole moment fluctuations, etc).
 
 > [!IMPORTANT]  
 > This codebase requires MD Trajectories. For an example of how to generate these trajectories, go to: https://github.com/masauer2/GMX_MD_TEMPLATE
@@ -26,7 +26,7 @@ dcd = DCDReader("trajectory.dcd")
 
 ## Step 2 - Using the DCD Reader to read from file
 
-Create an array to hold empty Frame objects. Each Frame will store the atomic coordinates of the system at a specific timestep. For each frame in the trajectory, we will use the read_DCD_Frame() function to read the data for the next timestep. <br/>
+Create an array to hold empty `Frame` objects. Each `Frame` will store the atomic coordinates of the system at a specific timestep. For each frame in the trajectory, we will use the `read_DCD_Frame()` function to read the data for the next timestep. <br/>
 ```
 frames = np.empty(len(dcd), dtype=object)
 for frameNum in range(options["nRead"]):
@@ -37,7 +37,7 @@ for frameNum in range(options["nRead"]):
 
 After reading in the trajectory, we can calculate the molecular properties of each Frame. <br/>
 
-For example, we can compute the contact distance matrix. The Frame class includes static methods to calculate the distances between all atoms in a given Frame. <br/>
+For example, we can compute the contact distance matrix. The `Frame` class includes static methods to calculate the distances between all atoms in a given `Frame`. <br/>
 
 ```
 for frameNum in range(len(dcd)):
@@ -45,7 +45,7 @@ for frameNum in range(len(dcd)):
   Frame.output_distance_matrix(distance_matrix, "matrix.out")
 ```
 
-The distance matrix can be calculated for a subset of atomic coordinates in the system. Selections can be made using the frame.get_selection(arr_slice) function. <br/>
+The distance matrix can be calculated for a subset of atomic coordinates in the system. Selections can be made using the `frame.get_selection(arr_slice)` function. <br/>
 
 The following code computes the distance matrix between atoms 0-19 and atoms 50-249 for all timesteps in the trajectory:
 
