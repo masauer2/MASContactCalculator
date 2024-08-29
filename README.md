@@ -1,5 +1,12 @@
 # MASContactCalculator
 This codebase is designed to be used as a template for how to perform analysis on molecular dynamics simulations. Currently, the sample code provided calculates a contact distance matrix from `.dcd` trajectories. However, this repository could be used to write analysis for any position-based properties (position correlation functions, dipole moment fluctuations, etc).
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+```
 
 ## Setup
 
