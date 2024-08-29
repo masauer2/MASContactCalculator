@@ -4,6 +4,7 @@ This codebase is designed to be used as a **simple template** for how to perform
 > [!IMPORTANT]  
 > This codebase requires MD Trajectories. For an example of how to generate these trajectories, go to: https://github.com/masauer2/GMX_MD_TEMPLATE
 
+
 ## Setup
 
 ```
