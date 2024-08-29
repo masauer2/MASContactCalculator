@@ -2,7 +2,7 @@
 This codebase is designed to be used as a template for how to perform analysis on molecular dynamics simulations. Currently, the sample code provided calculates a contact distance matrix from `.dcd` trajectories. However, this repository could be used to write analysis for any position-based properties (position correlation functions, dipole moment fluctuations, etc).
 
 > [!IMPORTANT]  
-> FOR AN EXAMPLE OF HOW TO RUN GROMACS SIMULATIONS, GO TO: https://github.com/masauer2/GMX_MD_TEMPLATE
+> This codebase requires MD Trajectories. For an example of how to generate these trajectories, go to: https://github.com/masauer2/GMX_MD_TEMPLATE
 
 ## Setup
 
